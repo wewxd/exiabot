@@ -1,0 +1,2 @@
+# exiabot
+/votekick
