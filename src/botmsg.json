@@ -17,7 +17,11 @@
         "noinvite": "Your stupid guild does not have any working invit link so go beg for one ok",
         "remainingvotes": "Your vote has been taken into account. Remaining votes to kick this person: ",
         "waitvote": "You already voted recently. Please wait ",
-        "waitvote2": " seconds."
+        "waitvote2": " seconds.",
+        "guildprefix": "My prefix in this guild is: ",
+        "cmdlist": "List of avalaible commands: ",
+        "delall": "All the automatic responses has been removed.",
+        "noadmin": "You have to be administrator to execute this command."
     },
     "fr": {
         "cmdDoesNotExists": "Cette commande n'existe pas",
@@ -37,6 +41,10 @@
         "noinvite": "Ce serveur stupide n'a pas de lien d'invitation disponible donc va en demander un oui.",
         "remainingvotes": "Le vote a été pris en compte. Nombre de votes restants: ",
         "waitvote": "T'as déjà voté récemment. Attends encore ",
-        "waitvote2": " secondes."
+        "waitvote2": " secondes.",
+        "guildprefix": "Mon préfixe dans ce serveur est: ",
+        "cmdlist": "Liste des commandes disponibles: ",
+        "delall": "Toutes les réponses automatiques ont été supprimées.",
+        "noadmin": "Vous devez être administrateur pour exécuter cette commande"
     }
 }

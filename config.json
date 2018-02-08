@@ -1,6 +1,7 @@
 {
 	"token": "TOKEN",
-	"playing": "PLAYING",
+	"playing": "Tapez 'à l'aide'",
     "votekickTimeout": 900,
-    "votekickNb": 5
+    "votekickNb": 5,
+    "helpcmd": "à l'aide"
 }

@@ -19,6 +19,8 @@ client.on('message', msg=>{
 
         let guildid='a'+msg.guild.id  // 'a' because variable names can't start with a number
 
+        if(msg.content===conf.helpcmd)msg.channel.send(misc.help(guilds, guildid, cmd))
+
         if(!guilds[guildid]||!autorep[guildid]){ // If the bot doesn't know the server the message is from
             misc.addGuild(guildid, guilds, autorep)
         }
@@ -43,6 +45,9 @@ client.on('message', msg=>{
                         break
                     case 'delresponse':
                         msg.channel.send(cmd.delresponse(arg, autorep, guilds, guildid))
+                        break
+                    case 'delall':
+                        msg.channel.send(cmd.delall(msg.member, autorep, guilds, guildid))
                         break
                     case 'votekick':
                         msg.channel.send(cmd.votekick(msg,guilds, guildid, conf.votekickTimeout, conf.votekickNb))

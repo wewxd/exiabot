@@ -1,4 +1,5 @@
 const fs=require('fs')
+const botmsg=require('./botmsg')
 
 function addGuild(id, guilds, autorep){
     guilds[id]={lang: 'en', prefix: '/'}
@@ -13,7 +14,14 @@ function autorep(msg, guildid, autorep){
     }
 }
 
+function help(guilds, guildid, cmd){
+    let str=botmsg[guilds[guildid].lang].guildprefix+guilds[guildid].prefix+'\n'
+    str+=botmsg[guilds[guildid].lang].cmdlist+Object.keys(cmd).toString().replace(/,/g, ', ')
+    return str
+}
+
 module.exports={
     addGuild: addGuild,
-    autorep: autorep
+    autorep: autorep,
+    help: help
 }

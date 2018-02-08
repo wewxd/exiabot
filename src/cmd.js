@@ -4,13 +4,13 @@ const kick=require('./kick.json')
 
 function setprefix(arg, guilds, guildid){
     if(!arg)return botmsg[guilds[guildid].lang].noprefix
-    guilds[guildid].prefix=arg.substr(0, 5).replace(' ', '')
+    guilds[guildid].prefix=arg.substr(0, 5).replace(/ /g, '')
     fs.writeFile('./src/guilds.json', JSON.stringify(guilds), err=>{if(err)throw err})
     return botmsg[guilds[guildid].lang].newprefix+guilds[guildid].prefix
 }
 
 function setlanguage(arg, guilds, guildid){
-    if(!botmsg[arg]) return botmsg[guilds[guildid].lang].nolang+Object.keys(botmsg).toString().replace(',', ', ')
+    if(!botmsg[arg]) return botmsg[guilds[guildid].lang].nolang+Object.keys(botmsg).toString().replace(/,/, ', ')
     guilds[guildid].lang=arg
     fs.writeFile('./src/guilds.json', JSON.stringify(guilds), err=>{if(err)throw err})
     return botmsg[guilds[guildid].lang].lang
@@ -35,6 +35,15 @@ function delresponse(arg, autorep, guilds, guildid){
     delete autorep[guildid][arg]
     fs.writeFile('./src/autorep.json', JSON.stringify(autorep), err=>{if(err)throw err})
     return botmsg[guilds[guildid].lang].delrep
+}
+
+function delall(member, autorep, guilds, guildid){
+    if(member.hasPermission('ADMINISTRATOR')){
+        autorep[guildid]={}
+        return botmsg[guilds[guildid].lang].delall
+    }else{
+        return botmsg[guilds[guildid].lang].noadmin
+    }
 }
 
 function votekick(msg, guilds, guildid, voteTimeout, voteNb){
@@ -83,5 +92,6 @@ module.exports={
     stfu: stfu,
     addresponse: addresponse,
     delresponse: delresponse,
-    votekick: votekick
+    votekick: votekick,
+    delall: delall
 }
