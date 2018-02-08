@@ -1,0 +1,6 @@
+{
+	"token": "TOKEN",
+	"playing": "PLAYING",
+    "votekickTimeout": 900,
+    "votekickNb": 5
+}
