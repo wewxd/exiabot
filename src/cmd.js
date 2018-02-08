@@ -22,7 +22,7 @@ function stfu(ignored, channel, guilds, guildid){
 }
 
 function addresponse(arg, autorep, guilds, guildid){
-    if(!arg)return botmsg[guilds[guildid].lang].noarg
+    arg=arg.replace(/ +\|/, '|')
     let sep=arg.indexOf('|')
     if(sep===-1)return botmsg[guilds[guildid].lang].addRespSyntax
     autorep[guildid][arg.substr(0,sep)]=arg.substr(sep+1)
