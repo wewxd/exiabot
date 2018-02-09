@@ -6,6 +6,11 @@ Disponible sur le serveur discord d'Exia Strasbourg
 * /addresponse
 * /delresponse
 * /setprefix
-* /setlanguage [fr-en]
+* /setlanguage
 * /votekick
-<img src="https://i.imgur.com/JL7HYck.jpg">
+<img src="https://i.imgur.com/JL7HYck.jpg">  
+  
+  
+   Note ~~les contributeurs~~ mathou:
+* Séparez les données et le code (pas de liste de phrases de coconus dans le code, faites un fichier séparé)
+* Pour ajouter une commande, déclarez-la dans le switch(command) de main.js, ET dans module.exports dans src/cmd.js
