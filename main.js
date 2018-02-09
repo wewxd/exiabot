@@ -50,10 +50,11 @@ client.on('message', msg=>{
                         msg.channel.send(cmd.delall(msg.member, autorep, guilds, guildid))
                         break
                     case 'votekick':
-                        msg.channel.send(cmd.votekick(msg,guilds, guildid, conf.votekickTimeout, conf.votekickNb))
+                        msg.channel.send(cmd.votekick(msg,guilds, guildid, conf.votekick.time, conf.votekick.count))
                 }
             }
             misc.autorep(msg, guildid, autorep)
+            misc.moderation(guilds, guildid, msg)
         }else{
             if(msg.content===guilds[guildid].prefix+'talk'){
                 msg.channel.send(cmd.stfu(ignored, msg.channel.id, guilds, guildid))

@@ -92,6 +92,6 @@ module.exports={
     stfu: stfu,
     addresponse: addresponse,
     delresponse: delresponse,
-    votekick: votekick,
     delall: delall
+    votekick: votekick,
 }

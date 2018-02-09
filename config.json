@@ -1,7 +1,17 @@
 {
-	"token": "TOKEN",
-	"playing": "Tapez 'à l'aide'",
-    "votekickTimeout": 900,
-    "votekickNb": 5,
-    "helpcmd": "à l'aide"
+    "token": "TOKEN",
+    "playing": "Tapez 'à l'aide'",
+    "helpcmd": "à l'aide",
+    "votekick": {
+        "time": 900,
+        "count": 5
+    },
+    "moderation": {
+        "warningReset": 21600,
+        "warningCount": 2,
+        "time": 10,
+        "maxAllowedMsg":10,
+        "maxUserMentions": 4,
+        "maxRoleMentions": 2
+    }
 }

@@ -20,7 +20,9 @@
         "guildprefix": "My prefix in this guild is: ",
         "cmdlist": "List of avalaible commands: ",
         "delall": "All the automatic responses has been removed.",
-        "noadmin": "You have to be administrator to execute this command."
+        "noadmin": "You have to be administrator to execute this command.",
+        "spamwarning": "shut up",
+        "spamkicked": "haha gtfo retard"
     },
     "fr": {
         "cmdDoesNotExists": "Cette commande n'existe pas",
@@ -43,6 +45,8 @@
         "guildprefix": "Mon préfixe dans ce serveur est: ",
         "cmdlist": "Liste des commandes disponibles: ",
         "delall": "Toutes les réponses automatiques ont été supprimées.",
-        "noadmin": "Vous devez être administrateur pour exécuter cette commande"
+        "noadmin": "Vous devez être administrateur pour exécuter cette commande",
+        "spamwarning": "ta gueule",
+        "spamkicked": "hop ça dégage"
     }
 }
