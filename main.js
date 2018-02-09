@@ -31,6 +31,9 @@ client.on('message', msg=>{
                 let command=msg.content.match(/\w+/)[0]
                 let arg=msg.content.substr(msg.content.match(/\w+/)[0].length+1)
                 switch(command){
+                    case 'coconérateur':
+                        msg.channel.send(cmd.coco())
+                        break
                     case 'setprefix':
                         msg.channel.send(cmd.setprefix(arg, guilds, guildid))
                         break
