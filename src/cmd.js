@@ -1,107 +1,20 @@
 const fs=require('fs')
 const botmsg=require('./botmsg.json')
 const kick=require('./kick.json')
+const coco=require('./coconerateur.json')
+const r = function(arrayStr) {
+    var l = arrayStr.length;
+    var str = arrayStr[Math.floor(Math.random() * l)];
+    return str;
+};
 
 /**
  * Le Coconérateur : génère une phrase aléatoire à partir des expressions de DucCRN
  * @param void
  * @return String
  */
-function coco() {
-    var intro = ["ah gars,",
-                 "eh mec,",
-                 "",
-                 "quesque tu baragouines planche à pain,",
-                 "avec des des capotes,",
-                 "mon pote,",
-                 "jte cache pas que",
-                 "ah gars jte cache pas que",
-                 "ptdrrr",
-                 "wsh",
-                 "j'suis trop con",
-                 "voici ma carte de friendzone : ",
-                 "eh m. inspecteur gadget,"];
-    var sujet = ["les filles",
-                 "ta daronne",
-                 "ma daronne la catcheuse",
-                 "ta daronne la grosse",
-                 "vos daronnes",
-                 "ta mère",
-                 "la shoah",
-                 "les juifs",
-                 "israel",
-                 "ta personnalité inexistante",
-                 "les palestiniens",
-                 "ton daron",
-                 "les noirs",
-                 "les arabes",
-                 "la palestine",
-                 "maitre gims",
-                 "ce son",
-                 "wAllah",
-                 "ce fils de pute"];
-    var cmplmnt1 = ["dans ton tweet",
-                    "",
-                    "c'gros baiseur",
-                    "on dirait ça",
-                    "comme ça de temps en temps despi",
-                    "dla grosse chiennasse,",
-                    "pour en déglinguer deux trois",
-                    "qui nous vole nos femmes",
-                    "eh chui mort,",
-                    "à part tweeter ça,"];
-    var verbe = ["tambourine",
-                 "envoie",
-                 "baise",
-                 "ça boit",
-                 "casse",
-                 "vanne",
-                 "a cru c'était",
-                 "ça nique",
-                 "nique"];
-    var objet = ["bien ta mère la pute",
-                 "le meilleur rappeur",
-                 "le plus gros raté de l'univers",
-                 "les cocopops",
-                 "des nudes",
-                 "les puceaux",
-                 "Jul",
-                 "en Y",
-                 "booba"];
-    var cmplmnt2 = ["sa mère la tchoin",
-                    "sa mère ptn",
-                    "dans des camps de concentration",
-                    "complètement",
-                    "et meuf = putes",
-                    "c'est insultant chtrouve",
-                    "sur snap",
-                    "plus vite qu'eminem",
-                    "comme kaaris",
-                    "je chiale ptdrrrrrrrrrrrrr",
-                    "(classique du rap français)",
-                    "ce gros fils de pute",
-                    "merci pour cette analyse"];
-    var fin = ["gros",
-               "et toc",
-               "",
-               "hop",
-               "ptdrrrr",
-               "c'est fascinant",
-               "add snap coconus",
-               "ma princesse",
-               "bref on s'en bat les couilles de toi fils de pute",
-               "glisse DM",
-               "oulah",
-               "madaaaaaaaaaaaaaaaame",
-               "euh, hein quoi ?",
-               "(ADD SNAP COCONUUUUS)",
-               "que l'islam nous protège"];
-    var r = function(arrayStr) {
-        var l = arrayStr.length;
-        var str = arrayStr[Math.floor(Math.random() * l)];
-        return str;
-    };
-    return r(intro) + " " + r(sujet) + " " + r(cmplmnt1) + " " + r(verbe) + " " + r(objet) + " " + r(cmplmnt2) + " " + r(fin);
+function coconerateur() {
+    return r(coco.intro) + " " + r(coco.sujet) + " " + r(coco.cmplmnt1) + " " + r(coco.verbe) + " " + r(coco.objet) + " " + r(coco.cmplmnt2) + " " + r(coco.fin);
 }
 
 function setprefix(arg, guilds, guildid){
@@ -189,6 +102,7 @@ function votekick(msg, guilds, guildid, voteTimeout, voteNb){
 
 
 module.exports={
+    coconerateur: coconerateur,
     setprefix: setprefix,
     setlanguage: setlanguage,
     stfu: stfu,

@@ -19,20 +19,22 @@ client.on('message', msg=>{
 
         let guildid='a'+msg.guild.id  // 'a' because variable names can't start with a number
 
-        if(msg.content===conf.helpcmd)msg.channel.send(misc.help(guilds, guildid, cmd))
-
         if(!guilds[guildid]||!autorep[guildid]){ // If the bot doesn't know the server the message is from
             misc.addGuild(guildid, guilds, autorep)
         }
 
         if(!ignored.includes(msg.channel.id)){
+
+            if(msg.content===conf.helpcmd)msg.channel.send(misc.help(guilds, guildid, cmd))
+
             if(msg.content.startsWith(guilds[guildid].prefix)){  // command parser
                 msg.content=msg.content.substr(guilds[guildid].prefix.length)
-                let command=msg.content.match(/\w+/)[0]
+                let command=msg.content.match(/[A-zÀ-ÿ]+/)[0]
                 let arg=msg.content.substr(msg.content.match(/\w+/)[0].length+1)
+                console.log(command)
                 switch(command){
                     case 'coconérateur':
-                        msg.channel.send(cmd.coco())
+                        msg.channel.send(cmd.coconerateur())
                         break
                     case 'setprefix':
                         msg.channel.send(cmd.setprefix(arg, guilds, guildid))

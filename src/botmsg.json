@@ -12,7 +12,7 @@
         "noresp": "I don't have any response for that message",
         "delrep": "This automatic response has been deleted",
         "needmention": "You have to mention someone",
-        "kicked": ":wave",
+        "kicked": ":wave:",
         "noinvite": "Your stupid guild does not have any working invit link so go beg for one ok",
         "remainingvotes": "Your vote has been taken into account. Remaining votes to kick this person: ",
         "waitvote": "You already voted recently. Please wait ",
