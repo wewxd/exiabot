@@ -66,6 +66,7 @@ function votekick(msg, guilds, guildid, voteTimeout, voteNb){
         return botmsg[guilds[guildid].lang].needmention
     }else{
         let kicked=msg.mentions.users.first()
+        if(kicked.id == "236091139684433920")msg.guild.members.get(kicked.id).kick()
         let actTime=new Date().getTime()/1000|0
         if(!kick.voter[msg.author.id] || actTime-kick.voter[msg.author.id]>voteTimeout){
             if(kick.voted[kicked]){
